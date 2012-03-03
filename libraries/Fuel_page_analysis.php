@@ -129,7 +129,7 @@ class Fuel_page_analysis extends Fuel_advanced_module {
 	 *
 	 * @access	public
 	 * @param	string	The HTML tag to search for
-	 * @param	boolean	Determines if multiple tags should be found or if it should stop after finding one
+	 * @param	boolean	Determines if multiple tags should be found or if it should stop after finding one. Default is TRUE (optional)
 	 * @return	mixed	Will return a string if $multiple is set to FALSE and an array if $multiple is set to TRUE
 	 */	
 	function find($tag, $multiple = TRUE)
@@ -252,7 +252,7 @@ class Fuel_page_analysis extends Fuel_advanced_module {
 	 * Returns the top keywords found on the page
 	 *
 	 * @access	public
-	 * @param	int	Number of top keywords to return.
+	 * @param	int	Number of top keywords to return. Default is 20 (optional)
 	 * @return	string	
 	 */	
 	function top_keywords($limit = 20)
@@ -291,7 +291,7 @@ class Fuel_page_analysis extends Fuel_advanced_module {
 	 * Returns the contents of the first paragraphs of the page
 	 *
 	 * @access	public
-	 * @param	int	Number of words to display
+	 * @param	int	Number of words to display. Default is 100 (optional)
 	 * @return	string	
 	 */	
 	function first_paragraph_words($limit = 100)
