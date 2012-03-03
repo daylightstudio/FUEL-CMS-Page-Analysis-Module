@@ -74,6 +74,15 @@ class Fuel_page_analysis extends Fuel_advanced_module {
 		
 	}
 	
+	// --------------------------------------------------------------------
+	
+	/**
+	 * Sets the page to analyze
+	 *
+	 * @access	public
+	 * @param	string	The URL of the page to analyze
+	 * @return	void
+	 */	
 	function set_page($url)
 	{
 		if (!is_http_path($url))
@@ -113,6 +122,16 @@ class Fuel_page_analysis extends Fuel_advanced_module {
 		$this->url = $url;
 	}
 	
+	// --------------------------------------------------------------------
+	
+	/**
+	 * Finds HTML content to analyze
+	 *
+	 * @access	public
+	 * @param	string	The HTML tag to search for
+	 * @param	boolean	Determines if multiple tags should be found or if it should stop after finding one
+	 * @return	mixed	Will return a string if $multiple is set to FALSE and an array if $multiple is set to TRUE
+	 */	
 	function find($tag, $multiple = TRUE)
 	{
 		// a semicolon separates out the attributes to search for in a tag
@@ -166,25 +185,57 @@ class Fuel_page_analysis extends Fuel_advanced_module {
 		return $results;
 	}
 	
-	function title($page = NULL)
+	// --------------------------------------------------------------------
+	
+	/**
+	 * Returns the title of the page
+	 *
+	 * @access	public
+	 * @return	string	
+	 */	
+	function title()
 	{
 		$content = $this->find('title', FALSE);
 		return $content;
 	}
 	
+	// --------------------------------------------------------------------
 	
+	/**
+	 * Returns the meta description of the page
+	 *
+	 * @access	public
+	 * @return	string	
+	 */	
 	function meta_description()
 	{
 		$content = $this->find('meta[@name="description"];content', FALSE);
 		return $content;
 	}
 	
+	// --------------------------------------------------------------------
+	
+	/**
+	 * Returns the meta keywords of the page
+	 *
+	 * @access	public
+	 * @return	string	
+	 */	
 	function meta_keywords()
 	{
 		$content = $this->find('meta[@name="keywords"];content', FALSE);
 		return $content;
 	}
 	
+	// --------------------------------------------------------------------
+	
+	/**
+	 * Returns the main heading of the page.
+	 *
+	 * @access	public
+	 * @param	string	Heading size. Deafult is 1 for an h1 tag
+	 * @return	string	
+	 */	
 	function heading($h = '1')
 	{
 		if (is_numeric($h))
@@ -195,6 +246,15 @@ class Fuel_page_analysis extends Fuel_advanced_module {
 		return $content;
 	}
 	
+	// --------------------------------------------------------------------
+	
+	/**
+	 * Returns the top keywords found on the page
+	 *
+	 * @access	public
+	 * @param	int	Number of top keywords to return.
+	 * @return	string	
+	 */	
 	function top_keywords($limit = 20)
 	{
 		$content = $this->find('body', FALSE);
@@ -225,6 +285,15 @@ class Fuel_page_analysis extends Fuel_advanced_module {
 		return $page_words_count_limited;
 	}
 	
+	// --------------------------------------------------------------------
+	
+	/**
+	 * Returns the contents of the first paragraphs of the page
+	 *
+	 * @access	public
+	 * @param	int	Number of words to display
+	 * @return	string	
+	 */	
 	function first_paragraph_words($limit = 100)
 	{
 		$content = $this->find('p');
@@ -232,6 +301,14 @@ class Fuel_page_analysis extends Fuel_advanced_module {
 		return $content;
 	}
 	
+	// --------------------------------------------------------------------
+	
+	/**
+	 * Returns the pages image alt attributes
+	 *
+	 * @access	public
+	 * @return	array	
+	 */	
 	function image_alt()
 	{
 		$content = $this->find('img;alt;src');
@@ -250,6 +327,14 @@ class Fuel_page_analysis extends Fuel_advanced_module {
 		}
 	}
 	
+	// --------------------------------------------------------------------
+	
+	/**
+	 * Returns the pages outbound links
+	 *
+	 * @access	public
+	 * @return	array	
+	 */	
 	function outbound_links()
 	{
 		$content = $this->find('a[@href];href');
@@ -286,6 +371,15 @@ class Fuel_page_analysis extends Fuel_advanced_module {
 		return $results;
 	}
 	
+	// --------------------------------------------------------------------
+	
+	/**
+	 * Returns an array of the reporting results
+	 *
+	 * @access	public
+	 * @param	string	The page URL to analyze
+	 * @return	string	
+	 */	
 	function report($url)
 	{
 		$keyword_limit = 20;
