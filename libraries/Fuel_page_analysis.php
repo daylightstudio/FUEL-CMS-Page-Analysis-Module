@@ -31,7 +31,7 @@
 
 class Fuel_page_analysis extends Fuel_advanced_module {
 	
-	public $url = '';
+	public $url = ''; // The URL to analyze
 	protected $_xpath = '';
 	
 	/**
