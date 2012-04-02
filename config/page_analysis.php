@@ -14,6 +14,8 @@ $config['nav']['tools']['tools/page_analysis'] = lang('module_page_analysis');
 */
 
 $config['page_analysis'] = array();
+
+// the inline editing toolbar for doing page analysis
 $config['page_analysis']['toolbar'] = array(
 									'toolbar' => 'Page Analysis',
 							);
