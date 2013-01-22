@@ -168,7 +168,7 @@ class Fuel_page_analysis extends Fuel_advanced_module {
 			}
 			
 			// put the results into the result array
-			if (!empty($content))
+			if (!empty($content) AND !is_array($content))
 			{
 				$content = (string) $content;
 				if (!$multiple)
@@ -315,7 +315,7 @@ class Fuel_page_analysis extends Fuel_advanced_module {
 		$results = array();
 		foreach($content as $key => $img)
 		{
-			if (substr($img['src'], 0, 4) != 'http')
+			if (!empty($img['src']) AND substr($img['src'], 0, 4) != 'http')
 			{
 				$img['src'] = $this->url.'/'.$img['src'];
 			}
@@ -323,7 +323,11 @@ class Fuel_page_analysis extends Fuel_advanced_module {
 			{
 				$img['alt'] = lang('page_analysis_image_alt_empty');
 			}
-			$results[] = anchor($img['src'], $img['alt']);
+			if (!empty($img['src']) AND !empty($img['alt']))
+			{
+				$results[] = anchor($img['src'], $img['alt']);	
+			}
+			
 		}
 	}
 	
