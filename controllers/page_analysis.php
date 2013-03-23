@@ -61,7 +61,7 @@ class Page_analysis extends Fuel_base_controller {
 			$vars['report'] = $this->load->module_view(PAGE_ANALYSIS_FOLDER, '_admin/report', $vars, TRUE);
 		} 
 		
-		$this->load->module_model(FUEL_FOLDER, 'pages_model');
+		$this->load->module_model(FUEL_FOLDER, 'fuel_pages_model');
 		$pages = $this->fuel->pages->options_list('all', TRUE);
 
 		$vars['error'] = (!extension_loaded('curl')) ? lang('error_no_curl_lib') : '';
