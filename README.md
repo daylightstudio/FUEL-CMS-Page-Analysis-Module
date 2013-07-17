@@ -1,5 +1,5 @@
 # PAGE ANALYSIS MODULE FOR FUEL CMS
-This is a [FUEL CMS](http://www.getfuelcms.com) page_analysis module for adding page_analysis like functionality including posts, categories, and commenting.
+This is a [FUEL CMS](http://www.getfuelcms.com) page_analysis module that can be used to distill down SEO related content in a page.
 
 ## INSTALLATION
 There are a couple ways to install the module. If you are using GIT you can use the following method
@@ -34,7 +34,7 @@ To uninstall the module which will remove any permissions and database informati
 
 
 ## DOCUMENTATION
-To access the documentation, you can visit it [here](http://www.getfuelcms.com/user_guide/modules/page_analysis).
+To access the documentation, you can visit it [here](http://docs.getfuelcms.com/modules/page_analysis).
 
 ## TEAM
 * David McReynolds, Daylight Studio, Main Developer
