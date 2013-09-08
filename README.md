@@ -16,7 +16,7 @@ Type in:
 
 ### MANUAL
 1. Download the zip file from GitHub:
-[https://github.com/daylightstudio/FUEL-CMS-Page-Analysis-Module](https://github.com/daylightstudio/FUEL-CMS-page_analysis-Module)
+[https://github.com/daylightstudio/FUEL-CMS-Page-Analysis-Module](https://github.com/daylightstudio/FUEL-CMS-Page-Analysis-Module)
 
 2. Create a "page_analysis" folder in fuel/modules/ and place the contents of the page_analysis module folder in there.
 
