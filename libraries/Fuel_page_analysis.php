@@ -166,19 +166,26 @@ class Fuel_page_analysis extends Fuel_advanced_module {
 			{
 				$content = $r->nodeValue;
 			}
-			
+
 			// put the results into the result array
-			if (!empty($content) AND !is_array($content))
+			if (!empty($content))
 			{
-				$content = (string) $content;
-				if (!$multiple)
+				if (!is_array($content))
 				{
-					$results = trim($content);
-					break;
+					$content = (string) $content;
+					if (!$multiple)
+					{
+						$results = trim($content);
+						break;
+					}
+					else
+					{
+						$results[] = $content;
+					}
 				}
 				else
 				{
-					$results[] = $content;
+					$results = array($content);
 				}
 			}
 		}
@@ -327,8 +334,8 @@ class Fuel_page_analysis extends Fuel_advanced_module {
 			{
 				$results[] = anchor($img['src'], $img['alt']);	
 			}
-			
 		}
+		return $results;
 	}
 	
 	// --------------------------------------------------------------------
