@@ -398,7 +398,7 @@ class Fuel_page_analysis extends Fuel_advanced_module {
 		$this->set_page($url);
 		$results[lang('heading_title')] = $this->title();
 		$results[lang('heading_description')] = $this->meta_description();
-		$results[lang('heading_keywords')] = $this->meta_description();
+		$results[lang('heading_keywords')] = $this->meta_keywords();
 		$results['&lt;H1&gt;'] = $this->heading(1);
 		$results['&lt;H2&gt;'] = $this->heading(2);
 		$results['&lt;H3&gt;'] = $this->heading(3);
