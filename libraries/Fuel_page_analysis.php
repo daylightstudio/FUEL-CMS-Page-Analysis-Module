@@ -139,7 +139,11 @@ class Fuel_page_analysis extends Fuel_advanced_module {
 		
 		$xpath_results = $this->_xpath->query("//".$attrs[0]);
 		
-		if (empty($xpath_results)) continue;
+		if (empty($xpath_results))
+		{
+			return;
+		}
+		
 		$results = array();
 		
 		foreach($xpath_results as $r)
