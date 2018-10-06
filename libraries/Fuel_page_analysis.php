@@ -71,7 +71,6 @@ class Fuel_page_analysis extends Fuel_advanced_module {
 	{
 		parent::initialize($params);
 		$this->set_params($this->_config);
-		
 	}
 	
 	// --------------------------------------------------------------------
@@ -244,7 +243,7 @@ class Fuel_page_analysis extends Fuel_advanced_module {
 	 * Returns the main heading of the page.
 	 *
 	 * @access	public
-	 * @param	string	Heading size. Deafult is 1 for an h1 tag
+	 * @param	string	Heading size. Default is 1 for an h1 tag
 	 * @return	string	
 	 */	
 	function heading($h = '1')
@@ -264,7 +263,7 @@ class Fuel_page_analysis extends Fuel_advanced_module {
 	 *
 	 * @access	public
 	 * @param	int	Number of top keywords to return. Default is 20 (optional)
-	 * @return	string	
+	 * @return	array
 	 */	
 	function top_keywords($limit = 20)
 	{
